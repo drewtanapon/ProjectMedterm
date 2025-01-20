@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.2/dist/aframe-extras.min.js"></script>
+</head>
+
+<body>
+    <a-scene inspector="" keyboard-shortcuts="" screenshot="" xr-mode-ui="" device-orientation-permission-ui="">
+        <a-entity cursor="rayOrigin: mouse" raycaster="objects: .backToIndex; direction: 0.8404494167783394 -0.30037165819798034 0.4510228872112199; origin: 0.2888758006281611 5.462204624961727 0.33711241720443913; useWorldCoordinates: true" position="0 0 -1" geometry="primitive: sphere; radius: 0.005" color="#FF0000" material="color: white">
+        </a-entity>
+        <a-assets>
+            <!-- โหลดโมเดลหญ้า (ไฟล์ GLB) -->
+            <a-asset-item id="camp" src="/world2asset/Camp fire.glb"></a-asset-item>
+            <a-asset-item id="cm1" src="/world2asset/lowpoly_caveman.glb"></a-asset-item>
+            <a-asset-item id="pig" src="/world2asset/Pig.glb"></a-asset-item>
+            <a-asset-item id="grassModel" src="/world2asset/glass.glb"></a-asset-item>
+            <a-asset-item id="tree1" src="/world2asset/Tree (1).glb"></a-asset-item>
+            <a-asset-item id="tree2" src="/world2asset/Tree-2.glb"></a-asset-item>
+            <a-asset-item id="tree3" src="/world2asset/Tree.glb"></a-asset-item>
+            <a-asset-item id="treerock" src="/world2asset/treerock.glb"></a-asset-item>
+            <a-asset-item id="rock" src="/world2asset/Rock (1).glb"></a-asset-item>
+            <a-asset-item id="rock1" src="/world2asset/Rock Moss.glb"></a-asset-item>
+            <a-asset-item id="rock2" src="/world2asset/Rock.glb"></a-asset-item>
+            <a-asset-item id="wat" src="/world2asset/Gate.glb"></a-asset-item>
+            <a-asset-item id="bear" src="/world2asset/Black bear.glb"></a-asset-item>
+
+
+
+        </a-assets>
+
+        <!-- เพิ่มโมเดลหญ้า (วางหลายๆ ชิ้นบนพื้น) -->
+        <a-entity gltf-model="#grassModel" position="-5.33 0 -7.15" scale="1 1 1"></a-entity>
+        <a-entity gltf-model="#grassModel" position="4.87 0 -2.14" scale="1 1 1"></a-entity>
+        <a-entity gltf-model="#grassModel" position="2.32 0 -6.78" scale="1 1 1"></a-entity>
+        <a-entity gltf-model="#grassModel" position="-0.48 0 -1.95" scale="1 1 1"></a-entity>
+        <a-entity gltf-model="#grassModel" position="-3.22 0 4.11" scale="1 1 1"></a-entity>
+        <a-entity gltf-model="#grassModel" position="-2.47 0 -2.71" scale="1 1 1"></a-entity>
+
+        <a-entity gltf-model="#tree1" position="-5.33 0 1.64248" scale="12 12 12"></a-entity>
+        <a-entity gltf-model="#tree2" position="8.679 20.488 -5.361" scale="12 12 12"></a-entity>
+        <a-entity gltf-model="#tree3" position="-5.33 15 -7.15" scale="12 12 12"></a-entity>
+
+        <a-entity gltf-model="#treerock" position="10 0 -7.15" scale="1 1 1"></a-entity>
+        <a-entity gltf-model="#rock" position="-4.86059 7.37552 -14.72334" scale="38.69018 56.58159 36.84619"
+            rotation="38.80413963303013 -27.471607403137583 -75.80117038021766"></a-entity>
+        <a-entity gltf-model="#rock1" position="1.28727 9.97972 -17.20086"
+            scale="13.88081 13.88081 13.88081"></a-entity>
+        <a-entity gltf-model="#rock2" position="3.02378 9.20008 -15.51839" scale="10.82 11.67 12.46"
+            rotation="-27.508849659821085 -83.04450282626152 -102.5118898314215"></a-entity>
+        <a-entity gltf-model="#rock2" position="3.02378 9.20008 -15.51839" scale="10.82 11.67 12.46"
+            rotation="-27.508849659821085 -83.04450282626152 -102.5118898314215"></a-entity>
+
+        <a-entity gltf-model="#wat" position="0 0 5" scale="0.01 0.01 0.01"></a-entity>
+
+
+
+        <!-- เพิ่มโมเดลอื่นๆ ในฉาก -->
+        <a-entity gltf-model="#camp" position="0 0 -7" scale="0.025 0.025 0.025"></a-entity>
+        <a-entity gltf-model="#cm1" position="3 0 -7" scale="6.57074 6.55398 6.57074"
+            rotation="0 -90.78229784950328 0"></a-entity>
+        <a-entity gltf-model="#bear" position="13.70495 0.09357 -2.45998" scale="0.53256 0.53256 0.53256"
+            rotation="0 -54.86529254613737 0"></a-entity>
+        <a-entity gltf-model="#pig" position="-2.54542 0.99105 -8.7661" scale="0.017 0.017 0.017"
+            rotation="0 -31.734986356706038 0"></a-entity>
+        <a-entity gltf-model="#cm1" position="-2.545 0.06353 -5.67137" scale="6.571 6.554 6.571"
+            rotation="0 90.17840033343539 0"></a-entity>
+        <a-entity gltf-model="#glass" position="0 0.3 0" scale="1 1 1" rotation="0 -31.734986356706038 0"></a-entity>
+        <a-entity gltf-model="#glass" position="0 0.3 -6.41906" scale="" rotation="0 -31.734986356706038 0"></a-entity>
+
+        <a-text value="Homo sapiens: The Human Species" scale="3.5 4 4" position="5.97208 7.5 -2.9093" color="#00ff00"
+            text-align="center" side="double" anchor="center" shader="flat" opacity="0.8" text=""
+            rotation="0 -38.91357457190012 0"></a-text>
+
+        <a-text value="Homo sapiens, also known as modern humans, are the only surviving species of the genus Homo.\n
+        They evolved approximately 300,000 years ago and have since become the dominant species on Earth.\n
+        Humans are characterized by advanced cognitive abilities, language, and the ability to create complex tools.\n
+        Their culture and technology continue to evolve, shaping the world in profound ways." scale="1.5 1.5 1.5"
+            position="5.97208 4.5 -2.9093" color="#ffffff" text-align="center" side="double" anchor="center"
+            shader="flat" opacity="0.8" text="" rotation="0 -38.91357457190012 0">
+        </a-text>
+
+        <!-- พื้น -->
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="100" height="100" color="#7BC8A4"></a-plane>
+
+        
+
+
+        <a-plane position="0 4.46227 -14.17047" rotation="180 0 0" width="10" height="10" color="black"
+            material="side: double" clip-plan="0 1 0 3" geometry="">
+        </a-plane>
+        <a-box position="0 1 -13.0082" width="10" height="5" depth="1" color="#654321" material="" geometry=""
+            rotation="-49.55225491188926 0 0"></a-box>
+
+        <a-sound src="/world2asset/uii.mp3" autoplay="true" loop="true" position="0 0 0" volume="50">
+        </a-sound>
+
+
+        <a-sky color="#999999"></a-sky>
+
+        <a-entity gltf-model="Sign.glb" class="backToIndex" animation-mixer="" scale="" position="-2.81718 -0.23 4.4796"></a-entity>
+        <a-text value="Go back" font="roboto" scale="0.5 0.5 0.5" position="-2.12045 1.16089 4.32843" text="value: Go Back\n\n<<click here>>; align: center" rotation="0 180 0"></a-text>
+
+    </a-scene>
+    <script>
+        const camera = document.querySelector('#camera');
+
+            document.querySelectorAll('.backToIndex').forEach(entity => {
+            entity.addEventListener('click', () => {
+            // Redirect to the Warships page
+            window.location.href = 'index.html';
+        });
+    });
+    </script>
+
+</body>
+
+</html>

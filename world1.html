@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Jurassic Period</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.2/dist/aframe-extras.min.js"></script>
+  <style>
+     body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .info-box {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #333;
+      max-width: 400px;
+      text-align: center;
+      display: none; /* ซ่อน pop-up โดยเริ่มต้น */
+      z-index: 1000;
+    }
+
+    .info-box h3 {
+      margin-top: 0;
+      color: #007700;
+    }
+
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none; /* ซ่อน overlay โดยเริ่มต้น */
+      z-index: 999;
+    }
+
+    .popup-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #007700;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup-button:hover {
+      background-color: #005500;
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <a-scene inspector="" keyboard-shortcuts="" screenshot="" xr-mode-ui="" device-orientation-permission-ui="">
+
+    <a-entity cursor="rayOrigin: mouse" raycaster="objects: .backToIndex; direction: 0.8404494167783394 -0.30037165819798034 0.4510228872112199; origin: 0.2888758006281611 5.462204624961727 0.33711241720443913; useWorldCoordinates: true" position="0 0 -1" geometry="primitive: sphere; radius: 0.005" color="#FF0000" material="color: white">
+    </a-entity>
+
+    <!-- เพิ่มพื้นหญ้าที่กว้างขึ้น -->
+    <a-plane position="1.34588 0.038 0.22166" rotation="-89.987 -0.004 0" width="20" height="20" color="#66CC66" material="" geometry="" scale="7.964 8.431 1.289"></a-plane><a-plane position="0 0.038 0.58" rotation="-89.987 -0.004 0" width="20" height="20" color="#66CC66" material="" geometry="" scale="7.964 8.431 1.289"></a-plane>
+
+
+    <a-entity gltf-model="Cave Scene.glb" position="4.07216 0.49108 -19.62815" rotation="-2.0145196076799743 133.34045695623058 0.06875493541569878" scale="4.56309 5.57865 5.53465">
+    </a-entity>
+
+    <a-entity gltf-model="Forest Waterfall Vignette.glb" position="7.589 2.017 10.398" rotation="0 89.367 0" scale="3.45 1.805 2.897">
+    </a-entity><a-entity gltf-model="Forest Waterfall Vignette.glb" position="7.589 2.017 22.71595" rotation="0 89.367 0" scale="3.45 1.805 2.897">
+    </a-entity>
+
+    <a-sound src="original-theme-song-dinosaurs-disney-128-ytshorts.savetube.me.mp3" autoplay="true" loop="true" position="0 1 -3" volume="50" sound="">
+           
+      </a-sound>
+
+    <!-- เพิ่มข้อความเกี่ยวกับยุค Jurassic -->
+    
+
+    <!-- -ข้อความรายละเอีดยT-rex-->
+    <a-text value="Tyrannosaurus Rex (T-Rex)" color="blue" position="-3.25273 15.53224 31.66865" text="color: #ffffff" scale="2.177 2.484 2" align="center" rotation="0 -118.91910925278776 0">
+    </a-text>
+
+    <a-text value="Distinctive Characteristics:\n\nSize: Approximately 12-13 meters long, about 4 meters tall, and weighing around 8-14 tons.\n\nDiet: Primarily carnivorous, a top predator in the food chain.\n\nLifestyle: A powerful hunter with sharp teeth capable of crushing bones. It may have hunted alone or in groups and had the ability to scavenge from carcasses.\n\nEra: Cretaceous Period (approximately 68-66 million years ago)." color="#000000" position="-3.51803 10.17643 31.54706" align="center" width="10" line-height="50" scale="1.33283 1.15555 3" text="anchor: center; color: #ffffff" rotation="0 -118.93400615546116 0">
+    </a-text>
+
+
+    <!-- -ข้อความรายละเอีดย Apatosaurus-->
+    <a-text value="Apatosaurus" color="blue" position="26.52722 24.64241 -24.26151" text="color: #ffffff" scale="3.9245 5.63519 2" align="center" rotation="0 -59.07022980460248 0">
+    </a-text>
+
+    <a-text value="Distinctive Characteristics:\n\nSize: Approximately 21-23 meters long, weighing around 20-30 tons.\n\nDiet: Herbivorous, feeding on plants such as leaves and ferns from tall trees.\n\nLifestyle: Walked on strong, four-legged limbs. Its long neck helped it reach leaves from tall trees. Lived in herds for protection against predators.\n\nEra: Jurassic Period (approximately 152-151 million years ago)." color="#000000" position="26.3321 16.60678 -24.17961" align="center" width="12" line-height="60" scale="1.394 1.285 2.5" text="color: #ffffff" rotation="-3.5798403039773836 -58.63650075368845 0.006875493541569879">
+    </a-text>
+
+    <!-- -ข้อความรายละเอีดย Parasaurolophus-->
+    <a-text value="Parasaurolophus" color="blue" text="color: #ffffff" position="-17.81081 15.38478 -34.35967" scale="2.43748 3.87689 1" rotation="28.733833425810783 -15.348966373759625 1.3699420881577984">
+    </a-text>
+
+    <a-text value="Distinctive Characteristics:\n\nSize: Approximately 10 meters long, 4-5 meters tall, and weighing around 2-3 tons.\n\nDiet: Herbivorous, consuming plants such as leaves, seeds, and fruits.\n\nLifestyle: Possessed a long crest on its head, used for communication, such as producing sounds or interacting within the herd. Lived in large groups for safety.\n\nEra: Cretaceous Period (approximately 76-73 million years ago)." color="#000000" position="-16.175 9.446 -32.512" align="center" width="12" line-height="50" scale="0.897 1.071 1" text="color: #ffffff" rotation="-11.651 -22.101 0.01">
+    </a-text>
+
+
+
+    <a-entity gltf-model="Apatosaurus.glb" scale="0.64922 0.72029 0.80038" position="14.26619 0.3551 -9.1736" rotation="2.7989 -66.3858 0.0842">
+    </a-entity>
+
+    <a-entity gltf-model="Tree.glb" position="17.54901 -0.23502 -1.13808">
+    </a-entity><a-entity gltf-model="Tree.glb" position="-17.52295 -0.23502 57.22126">
+    </a-entity>
+
+
+    <a-entity gltf-model="T-Rex.glb" position="-8.23926 0.12672 39.28325" rotation="0.05213915935690491 -132.5956118225605 0.055576906127689854" scale="0.60666 0.62902 0.6071">
+    </a-entity>
+
+    <a-entity gltf-model="Walk in the Woods.glb" position="19.955 2.372 59.579" scale="40.375 44.585 50.821" rotation="1.639 51.33800000000001 -1.31">
+    </a-entity>
+
+    
+
+    <a-entity gltf-model="GrassP.glb" position="0 0 -6.4806" scale="1.90351 1.441 1.81606">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="2.03459 -0.02983 2.59139" scale="1.90351 1.441 1.81606">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="4.84588 0 -0.07097" scale="1.90351 1.441 1.81606">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-1.88213 0 0.62347" scale="1.90351 1.441 1.81606">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-3.18713 0 -3.45197" scale="1.90351 1.441 1.81606">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-3.896 0 -7.736" scale="1.904 1.441 1.816">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="1.17016 0 -2.0208" scale="1.90351 1.441 1.81606">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="4.60445 0 -4.96931" scale="1.90351 1.441 1.81606">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="7.01444 0 -8.5067" scale="1.90351 1.441 1.81606">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="2.98896 0 -9.24565" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-1.96463 0 -9.04013" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-6.97322 0 12.44186" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-3.12214 0 13.22682" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-2.94718 0 9.96937" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-6.22671 0 8.00952" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-8.4313 0 4.45008" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-9.75488 0 0.83535" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-9.77143 0 -3.26011" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-10.71056 0 -7.50121" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-3.5818 0 -12.74699" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-0.31156 0 -16.17863" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-1.56712 0 -12.78529" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="7.03751 0 2.85915" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="9.33551 0 1.006" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="7.7404 0 -3.09209" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="9.65519 0 -6.31847" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-1.99524 0 5.29477" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-4.39856 0 3.05658" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-6.11107 0 -1.28043" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-6.94456 0 -5.92827" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-16.57315 0 14.39179" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-13.36636 0 40.72882" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-21.54981 0 28.03095" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-22.86945 0 25.26424" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-22.99445 0 21.87862" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-23.43097 0 19.16225" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-6.98382 0 42.35006" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-9.53331 0 39.46467" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-11.5408 0 36.25203" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-15.19314 0 36.79369" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-17.78529 0 33.72948" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-20.12616 0 31.29939" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-19.75643 0 22.84358" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-22.98082 0 40.65831" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-23.50354 0 52.31042" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-20.54837 0 55.24946" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-18.82173 0 51.41155" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-19.27483 0 47.62363" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-21.61642 0 48.97494" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-6.55246 0 52.15095" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-12.74244 0 51.8489" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-13.92711 0 53.00963" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-16.52599 0 55.63411" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-14.57825 0 49.96527" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-20.06934 0 43.55896" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-15.61505 0 46.33569" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-16.43841 0 41.71086" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-18.27312 0 38.84937" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-20.11244 0 37.84295" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-21.92699 0 34.14314" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-18.65799 0 25.96425" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-16.46184 0 29.12043" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-13.12552 0 32.05459" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="2.59269 0 44.45589" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="1.32314 0 40.72543" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-1.64597 0 41.33662" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-1.6151 0 36.75181" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="2.99735 0 36.59573" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="6.20854 0 33.6658" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="11.42878 0 34.41451" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="14.62793 0 30.72009" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="9.89733 0 30.11699" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="5.89876 0 30.2642" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="2.53891 0 31.15311" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-22.37775 0 13.86331" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-6.61659 0 37.50685" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-3.45957 0 34.69467" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-8.71626 0 33.60731" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-5.15138 0 30.96477" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-10.04262 0 29.36897" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-0.64895 0 31.55494" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-2.45693 0 27.20627" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-19.74994 0 16.90269" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-13.31247 0 26.79758" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-6.30604 0 26.83504" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-2.74015 0 22.86617" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-9.47635 0 24.64967" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-15.49421 0 23.96853" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-17.07307 0 20.11967" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-12.5237 0 21.05195" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-6.21237 0 22.15111" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-13.85889 0 17.21191" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="13.62864 0 2.30024" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="14.30198 0 -1.14134" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="12.58357 0 -7.20934" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="13.30551 0 -4.4885" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="15.60299 0 -8.23679" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="18.40468 0 -8.59105" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="18.13142 0 -12.3511" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="12.36837 0 -10.68142" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="14.58803 0 -13.44345" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="10.88721 0 -14.41459" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="7.20022 0 -11.41346" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-18.84003 0 11.15306" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-19.58867 0 7.63623" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-19.70729 0 3.60787" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-20.33824 0 -0.42151" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-19.93044 0 -4.79964" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-19.37888 0 -8.62455" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-13.26355 0 -13.39778" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-14.37849 0 -9.73911" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-16.42431 0 -6.0832" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-16.86705 0 -2.17181" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-15.93772 0 1.60247" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-15.88454 0 5.56699" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-15.63001 0 8.70412" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-9.04951 0 18.39523" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-13.69176 0 11.72664" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-3.10414 0 19.64976" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-10.38275 0 14.62504" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-9.53812 0 10.57884" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-11.70037 0 7.31617" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-12.67431 0 3.57671" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-12.77197 0 -0.5266" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-11.39213 0 46.05294" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-8.48722 0 49.73545" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-12.77197 0 -0.5266" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-21.00469 0 -30.11438" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-3.0364 0 -30.25554" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-10.05393 0 -28.50673" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-3.32883 0 -33.96788" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-7.46914 0 -34.33016" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-11.72613 0 -32.65789" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-9.55753 0 -34.56615" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-13.36843 0 -34.93127" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-15.24996 0 -32.23834" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-17.39791 0 -34.07542" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-21.0898 0 -33.20199" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-23.52712 0 -35.74135" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-25.88777 0 -31.35432" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-27.29531 0 -34.54984" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-30.40907 0 -32.30772" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-31.10649 0 -24.49426" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-36.41892 0 -28.44823" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-29.26386 0 -28.29113" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-31.76478 0 -27.42133" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-12.77197 0 -0.5266" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-34.19983 0 -24.15956" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-31.6111 0 -21.5086" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-27.94154 0 -23.97804" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-24.4501 0 -24.85291" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-25.49167 0 -27.56163" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-18.04666 0 -28.31896" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-18.0354 0 -24.59213" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-21.09258 0 -26.38424" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-7.62167 0 -22.99655" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-5.49319 0 -23.80515" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-4.86628 0 -26.20973" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-7.44999 0 -28.68325" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-14.64833 0 -29.12265" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-21.46931 0 -23.13814" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-24.46257 0 -22.35571" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-27.01517 0 -19.66047" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-26.64918 0 -15.88996" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-13.00366 -8.14583 -19.2261" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-22.2565 0 -7.31663" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-20.98738 0 -15.07984" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-22.55811 0 -18.10047" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-16.46494 0 -15.21008" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-20.11749 0 -11.00048" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-22.66381 0 -12.88055" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-17.35761 0 -18.98507" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-12.21071 0 -24.55892" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-16.1011 0 -24.47016" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-19.80257 0 -20.32309" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-18.83587 0 -16.40864" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-17.27557 0 -12.51223" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-10.83294 -4.50658 -15.84683" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-15.10431 0 -20.46183" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-13.96302 0 -16.82394" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-7.52153 0 -18.62625" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-10.2504 0 -19.32582" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-13.35664 0 -3.70051" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-2.5897 0 16.08127" scale="1.90351 1.441 1.95529">
+    </a-entity><a-entity gltf-model="GrassP.glb" position="-5.81654 0 16.31535" scale="1.90351 1.441 1.95529">
+    </a-entity>
+
+
+
+    <a-entity gltf-model="Parasaurolophus.glb" position="-13.828 0.5824307381692068 -23.715" rotation="0 -20 0.8243073816920679" scale="1.43882 1.43882 1.43882" animation__run_forward="property: position; to: -13.828 0.5 10; dur: 4000; loop: true; easing: linear" animation__bounce="property: position; to: -13.828 0.7 -23.715; dur: 300; dir: alternate; loop: true; easing: easeInOutSine" animation__tilt="property: rotation; to: 0 -20 2; dur: 300; dir: alternate; loop: true; easing: easeInOutSine">
+    </a-entity>
+
+
+
+
+    <a-entity gltf-model="Swamp Island.glb" position="-6.3757 0 -30.42145" scale="5.67074 7.42937 6.55324" rotation="0 -33.6841887757411 0">
+    </a-entity><a-entity gltf-model="Swamp Island.glb" position="-26.24767 0 -30.59002" scale="5.67074 7.42937 6.55324" rotation="0 4.299475294661697 0">
+    </a-entity>
+
+
+    
+
+    <a-entity gltf-model="Mountaintop.glb" position="-42.08417 11.3 -19.27211" scale="62.065 79.284 59.785" rotation="0 -44.245 0">
+    </a-entity>
+
+<!-- ตัวที่หนึ่ง -->
+    <a-entity gltf-model="Pterablocktyls.glb" position="-26.04754057691643 25.204738924376827 -5.354345311358375" rotation="17.9548 28.5241 -5.005014520477072" scale="4.843 3.361 2.81" animation__move_x="property: position; to: -60 38.36728827256416 10; dur: 5000; dir: alternate; loop: true; easing: easeInOutSine" animation__hover_y="property: position; to: -62.46763 39 7.86941; dur: 2000; dir: alternate; loop: true; easing: easeInOutSine" animation__fly_in_out="property: position; to: -16.577 21.782 -8.793 15; dur: 6000; dir: alternate; loop: true; easing: easeInOutSine" animation__rotate="property: rotation; to: 17.9548 28.5241 -5; dur: 3000; dir: alternate; loop: true; easing: easeInOutSine">
+</a-entity>
+
+<!-- ตัวที่สอง -->
+<a-entity gltf-model="Pterablocktyls.glb" position="-38.55466 26.330484179793324 -74.81407487879746" rotation="15.270000000000001 -44.181 9.670886929659032" scale="4.843 3.361 2.81" animation__move_x="property: position; to: -36 26.330484179793324 -70; dur: 4500; dir: alternate; loop: true; easing: easeInOutSine" animation__hover_y="property: position; to: -38.55466 27 -72.69443; dur: 1800; dir: alternate; loop: true; easing: easeInOutSine" animation__fly_in_out="property: position; to: -38.55466 26.330484179793324 -75; dur: 5000; dir: alternate; loop: true; easing: easeInOutSine" animation__rotate="property: rotation; to: 15.27 -44.181 12; dur: 1800; dir: alternate; loop: true; easing: easeInOutSine">
+</a-entity>
+
+
+
+    <!-- พื้นที่พื้นหลัง -->
+    <a-plane position="0 0 -5" rotation="-90 0 0" width="10" height="10" color="#c1e3c8" material="" geometry=""></a-plane>
+
+     <!-- ป้ายข้อความ -->
+  <a-box position="-19.993 10.8 11.336" depth="0.1" height="1.5" width="6" color="#c1e3c8" rotation="12.851 116.85800000000002 -0.235" material="" geometry="" scale="2.73 3.986 1"></a-box>
+
+  <!-- ข้อความ -->
+  <a-entity text="value: In the Jurassic Period (approximately 201-145 million years ago), the Earth's landscape and environment were vastly different from today. This period is part of the middle phase of the Mesozoic Era, a time when dinosaurs thrived at their peak. The terrain during the Jurassic Period; align: center" position="-19.21278 10.70723 11.08149" rotation="12.850870386989234 116.85818006370218 -0.23491269600363754" scale="14.54645 15.4862 1">
+    position="-20.32444 8.542 11.65483" align="center" width="6" rotation="12.850870386989234 116.85818006370218 -0.23491269600363754"
+  </a-entity>
+      
+
+
+    <!-- เพิ่มท้องฟ้าที่มีพื้นหลังธรรมชาติ -->
+    <a-sky color="#66CCFF" material="" geometry="" scale="-1 1 3.988" position="0 -0.004 0"></a-sky>
+
+
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;"></div>
+    <div class="a-loader-title" style="display: none;">Jurassic Period</div>
+    <div class="a-loader-title" style="display: none;">Jurassic Period</div>
+    <div class="a-loader-title" style="display: none;">Jurassic Period</div>
+    <div class="a-loader-title" style="display: none;">Jurassic Period</div>
+    <div class="a-loader-title" style="display: none;">Jurassic Period</div>
+    <div class="a-loader-title" style="display: none;">Jurassic Period</div>
+    <div class="a-loader-title" style="display: none;">Jurassic Period</div>
+    <div class="a-loader-title" style="display: none;">Jurassic Period</div>
+    <div class="a-loader-title" style="display: none;">Jurassic Period</div>
+    <div class="a-loader-title" style="display: none;">Jurassic Period</div>
+    <div class="a-loader-title" style="display: none;">Jurassic Period</div>
+    <div class="a-loader-title" style="display: none;">Jurassic Period</div>
+
+
+
+    <!-- Overlay -->
+    <div class="popup-overlay" id="popupOverlay" onclick="closePopup()"></div>
+
+    <!-- Pop-up Content -->
+    <div class="info-box" id="infoBox">
+      <button onclick="closePopup()">Close</button>
+    </div>
+  
+    <!-- Trigger Button -->
+    <button class="popup-button" onclick="showPopup()">Show Pop-up</button>
+    
+    <a-entity gltf-model="/world2asset/Gate.glb" position="-22.71645 0.6418 -0.00714" scale="0.01 0.01 0.01" rotation="0 93.48436681134025 0"></a-entity>
+
+    <a-entity gltf-model="Sign.glb" class="backToIndex" animation-mixer="" scale="" position="-22.71111 0.09419 -2.39223" rotation="0 -90 0"></a-entity>
+    <a-text value="Go back" font="roboto" scale="0.5 0.5 0.5" position="-22.60276 1.508 -1.69794" text="value: Go Back\n\n<<click here>>; align: center" rotation="0 90 0"></a-text>
+    <script>
+
+      const camera = document.querySelector('#camera');
+
+      document.querySelectorAll('.backToIndex').forEach(entity => {
+      entity.addEventListener('click', () => {
+      // Redirect to the Warships page
+      window.location.href = 'index.html';
+      });
+    });
+
+      // ฟังก์ชันแสดง Pop-up
+      function showPopup() {
+        document.getElementById('infoBox').style.display = 'block';
+        document.getElementById('popupOverlay').style.display = 'block';
+      }
+  
+      // ฟังก์ชันปิด Pop-up
+      function closePopup() {
+        document.getElementById('infoBox').style.display = 'none';
+        document.getElementById('popupOverlay').style.display = 'none';
+      }
+    </script>
+<div class="a-loader-title" style="display: none;">Jurassic Period</div><div class="a-loader-title" style="display: none;">Jurassic Period</div><div class="a-loader-title" style="display: none;">Jurassic Period</div><div class="a-loader-title" style="display: none;">Jurassic Period</div><div class="a-loader-title" style="display: none;">Jurassic Period</div></a-scene>  
+
+
+
+  
+
+
+</body>
+
+</html>
